@@ -1,0 +1,2 @@
+#posts .post:nth-child(1) .avatar {background-image: url(../img/avatar1.jpg);}
+#posts .post:nth-child(1) .photo {background-image: url(../img/photo1.jpg);}
