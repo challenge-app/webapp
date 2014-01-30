@@ -17,16 +17,16 @@
 		<nav id="tabmenu">
 			<ul>
 				<li onclick="openTab(this)" rel="home" class="active"><a href="javascript:void(0)"></a></li>
-				<li onclick="openTab(this)" rel="notifications"><a href="javascript:void(0)"></a></li>
-				<li onclick="openTab(this)" rel="discover"><a href="javascript:void(0)"></a></li>
-				<li onclick="openTab(this)" rel="me"><a href="javascript:void(0)"></a></li>
+				<li onclick="openTab(this)" rel="notifications" class="after right"><a href="javascript:void(0)"></a></li>
+				<li onclick="openTab(this)" rel="discover" class="after"><a href="javascript:void(0)"></a></li>
+				<li onclick="openTab(this)" rel="me" class="after"><a href="javascript:void(0)"></a></li>
 			</ul>
 		</nav>
 	</header>
 
 	<nav id="pages">
 		<div class="scroller">
-			<article class="posts ease-it" rel="home">
+			<article class="posts ease-it" rel="home" data-next="notifications" data-prev="">
 				<section class="post">
 					<div class="user">
 						<div class="avatar"></div>
@@ -142,15 +142,15 @@
 				</section>
 			</article>
 
-			<article rel="notifications">
+			<article class="ease-it" rel="notifications" data-next="discover" data-prev="home">
 				Notifications
 			</article>
 
-			<article rel="discovery">
+			<article class="ease-it" rel="discovery" data-next="me" data-prev="notifications">
 				Discovery
 			</article>
 
-			<article rel="me">
+			<article class="ease-it" rel="me" data-next="" data-prev="discovery">
 				Me
 			</article>
 		</div>

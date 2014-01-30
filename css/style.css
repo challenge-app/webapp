@@ -116,16 +116,20 @@ header #tabmenu li:last-child a:after {
 /* ************************************* POSTS ******************************* */ 
 
 .posts {
-	margin: 10px 0;
+	/*margin: 10px 0;*/
 }
 
 .posts .post {
 	display: inline-block;
 	clear: both;
 	width: 96%;
-	margin: 10px 0 0 2%;
+	margin: 0 0 10px 2%;
 	background-color: #fff;
 	/*border-radius: 4px;*/
+}
+
+.posts .post:last-child {
+	margin-bottom: 0;
 }
 
 .posts .post > * {
@@ -230,9 +234,11 @@ header #tabmenu li:last-child a:after {
 
 #pages > .scroller {
 	overflow-x: hidden;
+	padding: 20px 0;
 }
 
 #pages > .scroller > article {
+	background-color: red;
 	position: absolute;
 	width: 100%; height: 100%;
 	right: 0;
@@ -257,3 +263,25 @@ header #tabmenu li:last-child a:after {
 
 #pages > .scroller > article.left,
 #pages > .scroller > article.right {z-index: 200;}
+
+/*
+#pages > .scroller > article.before,
+#pages > .scroller > article.left {
+	left: -100%;
+}
+
+#pages > .scroller > article.after,
+#pages > .scroller > article.right {
+	position: static; 
+	left: 100%;
+	-webkit-transition-delay: 0.2s; 
+	        transition-delay: 0.2s;
+}
+
+#pages > .scroller > article.left,
+#pages > .scroller > article.right {
+	z-index: 200;
+	-webkit-transition-delay: 0.2s; 
+	        transition-delay: 0.2s;
+}
+*/

@@ -74,12 +74,20 @@ document.addEventListener("touchmove", function(evt)
 
 document.addEventListener("touchend", function()
 {
+	var next = document.querySelector('article.active').getAttribute('data-next');
+	var prev = document.querySelector('article.active').getAttribute('data-prev');
+
 	document.querySelector('article.active').classList.add('ease-it');
 	document.querySelector('article.active').style.left = "0px";
 
-	if(diff < -200)
+	if(diff < -200 && next != "")
 	{
 		document.querySelector('article.active').style.left = "";
-		updateTabs(document.querySelector('li[rel="notifications"]'));
+		updateTabs(document.querySelector('li[rel="'+next+'"]'));
+	}
+	else if(diff > 200 && prev != "")
+	{
+		document.querySelector('article.active').style.left = "";
+		updateTabs(document.querySelector('li[rel="'+prev+'"]'));
 	}
 }, false);
