@@ -5,7 +5,7 @@
 	<title>Challenge Your Friends</title>
 
 	<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
-	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"/>
 	<meta name="description" content=""/>
 	<meta name="author" content=""/>
 
@@ -14,70 +14,150 @@
 </head>
 <body>
 	<header>
-		<nav id="menu">
+		<nav id="tabmenu">
 			<ul>
-				<li><a href="#home" class="home active"></a></li>
-				<li><a href="#notifications" class="notifications"></a></li>
-				<li><a href="#discover" clas="discover"></a></li>
-				<li><a href="#me" class="me"></a></li>
+				<li onclick="openTab(this)" rel="home" class="active"><a href="javascript:void(0)"></a></li>
+				<li onclick="openTab(this)" rel="notifications"><a href="javascript:void(0)"></a></li>
+				<li onclick="openTab(this)" rel="discover"><a href="javascript:void(0)"></a></li>
+				<li onclick="openTab(this)" rel="me"><a href="javascript:void(0)"></a></li>
 			</ul>
 		</nav>
 	</header>
 
-	<section id="posts">
-		<section class="post">
-			<div class="user">
-				<div class="avatar"></div>
-				<a href="javascript:void(0)" class="username">username</a>
-			</div>
+	<nav id="pages">
+		<div class="scroller">
+			<article class="posts" rel="home">
+				<section class="post">
+					<div class="user">
+						<div class="avatar"></div>
+						<a href="javascript:void(0)" class="username">username</a>
+					</div>
 
-			<div class="photo"></div>
+					<div class="photo">
+						<img src="img/photo1.jpg"/>
+					</div>
 
-			<nav class="buttons">
-				<ul>
-					<li><a href="javascript:void(0)" class="comments"></a></li>
-					<li class="square"><a href="javascript:void(0)" class="share"></a></li>
-					<li class="square"><a href="javascript:void(0)" class="like"></a></li>
-				</ul>
-			</nav>
-		</section>
+					<nav class="buttons">
+						<ul>
+							<li><a href="javascript:void(0)" class="comments"></a></li>
+							<li class="square"><a href="javascript:void(0)" class="share"></a></li>
+							<li class="square"><a href="javascript:void(0)" class="like"></a></li>
+						</ul>
+					</nav>
+				</section>
 
-		<section class="post">
-			<div class="user">
-				<div class="avatar"></div>
-				<a href="javascript:void(0)" class="username">username</a>
-			</div>
+				<section class="post">
+					<div class="user">
+						<div class="avatar"></div>
+						<a href="javascript:void(0)" class="username">username</a>
+					</div>
 
-			<div class="photo"></div>
+					<div class="photo">
+						<img src="img/photo-space.png"/>
+					</div>
 
-			<nav class="buttons">
-				<ul>
-					<li><a href="javascript:void(0)" class="comments"></a></li>
-					<li class="square"><a href="javascript:void(0)" class="share"></a></li>
-					<li class="square"><a href="javascript:void(0)" class="like"></a></li>
-				</ul>
-			</nav>
-		</section>
+					<nav class="buttons">
+						<ul>
+							<li><a href="javascript:void(0)" class="comments"></a></li>
+							<li class="square"><a href="javascript:void(0)" class="share"></a></li>
+							<li class="square"><a href="javascript:void(0)" class="like"></a></li>
+						</ul>
+					</nav>
+				</section>
 
-		<section class="post">
-			<div class="user">
-				<div class="avatar"></div>
-				<a href="javascript:void(0)" class="username">username</a>
-			</div>
+				<section class="post">
+					<div class="user">
+						<div class="avatar"></div>
+						<a href="javascript:void(0)" class="username">username</a>
+					</div>
 
-			<div class="photo"></div>
+					<div class="photo">
+						<img src="img/photo-space.png"/>
+					</div>
 
-			<nav class="buttons">
-				<ul>
-					<li><a href="javascript:void(0)" class="comments"></a></li>
-					<li class="square"><a href="javascript:void(0)" class="share"></a></li>
-					<li class="square"><a href="javascript:void(0)" class="like"></a></li>
-				</ul>
-			</nav>
-		</section>
-	</section>
+					<nav class="buttons">
+						<ul>
+							<li><a href="javascript:void(0)" class="comments"></a></li>
+							<li class="square"><a href="javascript:void(0)" class="share"></a></li>
+							<li class="square"><a href="javascript:void(0)" class="like"></a></li>
+						</ul>
+					</nav>
+				</section>
+
+				<section class="post">
+					<div class="user">
+						<div class="avatar"></div>
+						<a href="javascript:void(0)" class="username">username</a>
+					</div>
+
+					<div class="photo">
+						<img src="img/photo-space.png"/>
+					</div>
+
+					<nav class="buttons">
+						<ul>
+							<li><a href="javascript:void(0)" class="comments"></a></li>
+							<li class="square"><a href="javascript:void(0)" class="share"></a></li>
+							<li class="square"><a href="javascript:void(0)" class="like"></a></li>
+						</ul>
+					</nav>
+				</section>
+
+				<section class="post">
+					<div class="user">
+						<div class="avatar"></div>
+						<a href="javascript:void(0)" class="username">username</a>
+					</div>
+
+					<div class="photo">
+						<img src="img/photo-space.png"/>
+					</div>
+
+					<nav class="buttons">
+						<ul>
+							<li><a href="javascript:void(0)" class="comments"></a></li>
+							<li class="square"><a href="javascript:void(0)" class="share"></a></li>
+							<li class="square"><a href="javascript:void(0)" class="like"></a></li>
+						</ul>
+					</nav>
+				</section>
+
+				<section class="post">
+					<div class="user">
+						<div class="avatar"></div>
+						<a href="javascript:void(0)" class="username">username</a>
+					</div>
+
+					<div class="photo">
+						<img src="img/photo-space.png"/>
+					</div>
+
+					<nav class="buttons">
+						<ul>
+							<li><a href="javascript:void(0)" class="comments"></a></li>
+							<li class="square"><a href="javascript:void(0)" class="share"></a></li>
+							<li class="square"><a href="javascript:void(0)" class="like"></a></li>
+						</ul>
+					</nav>
+				</section>
+			</article>
+
+			<article rel="notifications">
+				Notifications
+			</article>
+
+			<article rel="discovery">
+				Discovery
+			</article>
+
+			<article rel="me">
+				Me
+			</article>
+		</div>
+	</nav>
 
 	<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=PT+Sans:400,700"/>
 	<!-- <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css"/> -->
+	<script type="text/javascript" src="js/script.js"></script>
 </body>
 </html>
