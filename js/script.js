@@ -56,10 +56,13 @@ var start,
 document.addEventListener("touchstart", function(evt)
 {
 	start = last = current = evt.touches[0].screenX;
+	document.querySelector('article.active').classList.remove('ease-it');
 }, false);
 
 document.addEventListener("touchmove", function(evt)
 {
+	evt.preventDefault();
+
 	last = current;
 	current = evt.touches[0].screenX;
 
@@ -71,6 +74,7 @@ document.addEventListener("touchmove", function(evt)
 
 document.addEventListener("touchend", function()
 {
+	document.querySelector('article.active').classList.add('ease-it');
 	document.querySelector('article.active').style.left = "0px";
 
 	if(diff < -200)
