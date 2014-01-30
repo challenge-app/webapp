@@ -51,12 +51,25 @@ function updateTabs(item) {
 var start,
 		last,
 		current,
-		diff;
+		diff,
+		prev,
+		next,
+		prevObj,
+		nextObj,
+		docWidth = window.innerWidth;
 
 document.addEventListener("touchstart", function(evt)
 {
 	start = last = current = evt.touches[0].screenX;
 	document.querySelector('article.active').classList.remove('ease-it');
+
+	next = document.querySelector('article.active').getAttribute('data-next');
+	prev = document.querySelector('article.active').getAttribute('data-prev');
+
+	nextObj = document.querySelector('article[rel="'+next+'"]');
+	prevObj = document.querySelector('article[rel="'+prev+'"]');
+	
+	nextObj.classList.remove('ease-it');
 }, false);
 
 document.addEventListener("touchmove", function(evt)
@@ -68,14 +81,16 @@ document.addEventListener("touchmove", function(evt)
 
 	diff = current - start;
 
+	var aux = (docWidth+diff);
+
 	document.querySelector('article.active').style.left = diff+"px";
+	//prevObj.style.left = diff+"px";
+	nextObj.style.left = aux+"px";
 
 }, false);
 
 document.addEventListener("touchend", function()
 {
-	var next = document.querySelector('article.active').getAttribute('data-next');
-	var prev = document.querySelector('article.active').getAttribute('data-prev');
 
 	document.querySelector('article.active').classList.add('ease-it');
 	document.querySelector('article.active').style.left = "0px";
