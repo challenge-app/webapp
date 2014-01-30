@@ -47,3 +47,35 @@ function updateTabs(item) {
 		}
 	}
 }
+
+var start,
+		last,
+		current,
+		diff;
+
+document.addEventListener("touchstart", function(evt)
+{
+	start = last = current = evt.touches[0].screenX;
+}, false);
+
+document.addEventListener("touchmove", function(evt)
+{
+	last = current;
+	current = evt.touches[0].screenX;
+
+	diff = current - start;
+
+	document.querySelector('article.active').style.left = diff+"px";
+
+}, false);
+
+document.addEventListener("touchend", function()
+{
+	document.querySelector('article.active').style.left = "0px";
+
+	if(diff < -200)
+	{
+		document.querySelector('article.active').style.left = "";
+		updateTabs(document.querySelector('li[rel="notifications"]'));
+	}
+}, false);
