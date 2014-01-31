@@ -54,6 +54,7 @@ var start,
 		diff,
 		prev,
 		next,
+		currObj,
 		prevObj,
 		nextObj,
 		docWidth = window.innerWidth;
@@ -61,15 +62,16 @@ var start,
 document.addEventListener("touchstart", function(evt)
 {
 	start = last = current = evt.touches[0].screenX;
-	document.querySelector('article.active').classList.remove('ease-it');
 
 	next = document.querySelector('article.active').getAttribute('data-next');
 	prev = document.querySelector('article.active').getAttribute('data-prev');
 
+	currObj = document.querySelector('article.active');
 	nextObj = document.querySelector('article[rel="'+next+'"]');
 	prevObj = document.querySelector('article[rel="'+prev+'"]');
-	
+
 	nextObj.classList.remove('ease-it');
+	currObj.classList.remove('ease-it');
 }, false);
 
 document.addEventListener("touchmove", function(evt)
@@ -84,13 +86,31 @@ document.addEventListener("touchmove", function(evt)
 	var aux = (docWidth+diff);
 
 	document.querySelector('article.active').style.left = diff+"px";
-	//prevObj.style.left = diff+"px";
-	nextObj.style.left = aux+"px";
+	
+	if(prevObj != null)
+	{
+		if(diff < 0)
+		{
+			prevObj.style.left = "-"+diff+"px";
+		}
+		else
+		{
+			prevObj.style.left = diff+"px";
+		}
+	}
+	if(nextObj != null)
+	{
+		nextObj.style.left = aux+"px";
+	}
 
 }, false);
 
 document.addEventListener("touchend", function()
 {
+	if(prevObj != null)
+		prevObj.style.left = '';
+	if(nextObj != null)
+		nextObj.style.left = '';
 
 	document.querySelector('article.active').classList.add('ease-it');
 	document.querySelector('article.active').style.left = "0px";

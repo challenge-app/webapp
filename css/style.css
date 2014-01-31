@@ -256,10 +256,10 @@ header #tabmenu li:last-child a:after {
   -webkit-transform-style: preserve-3d;
   -webkit-backface-visibility: hidden;
 
-	-webkit-transition: left 0.2s ease-out;
-	   -moz-transition: left 0.2s ease-out;
-	    -ms-transition: left 0.2s ease-out;
-	        transition: left 0.2s ease-out;
+	-webkit-transition: left 0.2s;
+	   -moz-transition: left 0.2s;
+	    -ms-transition: left 0.2s;
+	        transition: left 0.2s;
 }
 
 #pages > .scroller > article.active {left: 0; z-index: 300;}
