@@ -5,7 +5,8 @@
 	<title>Challenge Your Friends</title>
 
 	<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
-	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+	<meta name="msapplication-tap-highlight" content="no" /> 
 	<meta name="description" content=""/>
 	<meta name="author" content=""/>
 
@@ -16,148 +17,147 @@
 	<header>
 		<nav id="tabmenu">
 			<ul>
-				<li onclick="openTab(this)" rel="home" class="active"><a href="javascript:void(0)"></a></li>
-				<li onclick="openTab(this)" rel="notifications" class="after right"><a href="javascript:void(0)"></a></li>
-				<li onclick="openTab(this)" rel="discover" class="after"><a href="javascript:void(0)"></a></li>
-				<li onclick="openTab(this)" rel="me" class="after"><a href="javascript:void(0)"></a></li>
+				<li onclick="onClickTabItem(this)" rel="home" class="active"><a href="javascript:void(0)"></a></li>
+				<li onclick="onClickTabItem(this)" rel="notifications" class="after right"><a href="javascript:void(0)"></a></li>
+				<li onclick="onClickTabItem(this)" rel="discover" class="after"><a href="javascript:void(0)"></a></li>
+				<li onclick="onClickTabItem(this)" rel="me" class="after"><a href="javascript:void(0)"></a></li>
 			</ul>
 		</nav>
 	</header>
 
 	<nav id="pages">
-		<div class="scroller">
-			<article class="posts ease-it" rel="home" data-next="notifications" data-prev="">
-				<section class="post">
-					<div class="user">
-						<div class="avatar"></div>
-						<a href="javascript:void(0)" class="username">username</a>
-					</div>
+		<article rel="home" class="posts active">
+			<section class="post">
+				<div class="user">
+					<div class="avatar"></div>
+					<a href="javascript:void(0)" class="username">username</a>
+				</div>
 
-					<div class="photo">
-						<img src="img/photo1.jpg"/>
-					</div>
+				<div class="photo">
+					<img src="img/photo1.jpg"/>
+				</div>
 
-					<nav class="buttons">
-						<ul>
-							<li><a href="javascript:void(0)" class="comments"></a></li>
-							<li class="square"><a href="javascript:void(0)" class="share"></a></li>
-							<li class="square"><a href="javascript:void(0)" class="like"></a></li>
-						</ul>
-					</nav>
-				</section>
+				<nav class="buttons">
+					<ul>
+						<li><a href="javascript:void(0)" class="comments"></a></li>
+						<li class="square"><a href="javascript:void(0)" class="share"></a></li>
+						<li class="square"><a href="javascript:void(0)" class="like"></a></li>
+					</ul>
+				</nav>
+			</section>
 
-				<section class="post">
-					<div class="user">
-						<div class="avatar"></div>
-						<a href="javascript:void(0)" class="username">username</a>
-					</div>
+			<section class="post">
+				<div class="user">
+					<div class="avatar"></div>
+					<a href="javascript:void(0)" class="username">username</a>
+				</div>
 
-					<div class="photo">
-						<img src="img/photo-space.png"/>
-					</div>
+				<div class="photo">
+					<img src="img/photo-space.png"/>
+				</div>
 
-					<nav class="buttons">
-						<ul>
-							<li><a href="javascript:void(0)" class="comments"></a></li>
-							<li class="square"><a href="javascript:void(0)" class="share"></a></li>
-							<li class="square"><a href="javascript:void(0)" class="like"></a></li>
-						</ul>
-					</nav>
-				</section>
+				<nav class="buttons">
+					<ul>
+						<li><a href="javascript:void(0)" class="comments"></a></li>
+						<li class="square"><a href="javascript:void(0)" class="share"></a></li>
+						<li class="square"><a href="javascript:void(0)" class="like"></a></li>
+					</ul>
+				</nav>
+			</section>
 
-				<section class="post">
-					<div class="user">
-						<div class="avatar"></div>
-						<a href="javascript:void(0)" class="username">username</a>
-					</div>
+			<section class="post">
+				<div class="user">
+					<div class="avatar"></div>
+					<a href="javascript:void(0)" class="username">username</a>
+				</div>
 
-					<div class="photo">
-						<img src="img/photo-space.png"/>
-					</div>
+				<div class="photo">
+					<img src="img/photo-space.png"/>
+				</div>
 
-					<nav class="buttons">
-						<ul>
-							<li><a href="javascript:void(0)" class="comments"></a></li>
-							<li class="square"><a href="javascript:void(0)" class="share"></a></li>
-							<li class="square"><a href="javascript:void(0)" class="like"></a></li>
-						</ul>
-					</nav>
-				</section>
+				<nav class="buttons">
+					<ul>
+						<li><a href="javascript:void(0)" class="comments"></a></li>
+						<li class="square"><a href="javascript:void(0)" class="share"></a></li>
+						<li class="square"><a href="javascript:void(0)" class="like"></a></li>
+					</ul>
+				</nav>
+			</section>
 
-				<section class="post">
-					<div class="user">
-						<div class="avatar"></div>
-						<a href="javascript:void(0)" class="username">username</a>
-					</div>
+			<section class="post">
+				<div class="user">
+					<div class="avatar"></div>
+					<a href="javascript:void(0)" class="username">username</a>
+				</div>
 
-					<div class="photo">
-						<img src="img/photo-space.png"/>
-					</div>
+				<div class="photo">
+					<img src="img/photo-space.png"/>
+				</div>
 
-					<nav class="buttons">
-						<ul>
-							<li><a href="javascript:void(0)" class="comments"></a></li>
-							<li class="square"><a href="javascript:void(0)" class="share"></a></li>
-							<li class="square"><a href="javascript:void(0)" class="like"></a></li>
-						</ul>
-					</nav>
-				</section>
+				<nav class="buttons">
+					<ul>
+						<li><a href="javascript:void(0)" class="comments"></a></li>
+						<li class="square"><a href="javascript:void(0)" class="share"></a></li>
+						<li class="square"><a href="javascript:void(0)" class="like"></a></li>
+					</ul>
+				</nav>
+			</section>
 
-				<section class="post">
-					<div class="user">
-						<div class="avatar"></div>
-						<a href="javascript:void(0)" class="username">username</a>
-					</div>
+			<section class="post">
+				<div class="user">
+					<div class="avatar"></div>
+					<a href="javascript:void(0)" class="username">username</a>
+				</div>
 
-					<div class="photo">
-						<img src="img/photo-space.png"/>
-					</div>
+				<div class="photo">
+					<img src="img/photo-space.png"/>
+				</div>
 
-					<nav class="buttons">
-						<ul>
-							<li><a href="javascript:void(0)" class="comments"></a></li>
-							<li class="square"><a href="javascript:void(0)" class="share"></a></li>
-							<li class="square"><a href="javascript:void(0)" class="like"></a></li>
-						</ul>
-					</nav>
-				</section>
+				<nav class="buttons">
+					<ul>
+						<li><a href="javascript:void(0)" class="comments"></a></li>
+						<li class="square"><a href="javascript:void(0)" class="share"></a></li>
+						<li class="square"><a href="javascript:void(0)" class="like"></a></li>
+					</ul>
+				</nav>
+			</section>
 
-				<section class="post">
-					<div class="user">
-						<div class="avatar"></div>
-						<a href="javascript:void(0)" class="username">username</a>
-					</div>
+			<section class="post">
+				<div class="user">
+					<div class="avatar"></div>
+					<a href="javascript:void(0)" class="username">username</a>
+				</div>
 
-					<div class="photo">
-						<img src="img/photo-space.png"/>
-					</div>
+				<div class="photo">
+					<img src="img/photo-space.png"/>
+				</div>
 
-					<nav class="buttons">
-						<ul>
-							<li><a href="javascript:void(0)" class="comments"></a></li>
-							<li class="square"><a href="javascript:void(0)" class="share"></a></li>
-							<li class="square"><a href="javascript:void(0)" class="like"></a></li>
-						</ul>
-					</nav>
-				</section>
-			</article>
+				<nav class="buttons">
+					<ul>
+						<li><a href="javascript:void(0)" class="comments"></a></li>
+						<li class="square"><a href="javascript:void(0)" class="share"></a></li>
+						<li class="square"><a href="javascript:void(0)" class="like"></a></li>
+					</ul>
+				</nav>
+			</section>
+		</article>
 
-			<article class="ease-it" rel="notifications" data-next="discover" data-prev="home">
-				Notifications
-			</article>
+		<article rel="notifications" class="after right">
+			Notifications
+		</article>
 
-			<article class="ease-it" rel="discovery" data-next="me" data-prev="notifications">
-				Discovery
-			</article>
+		<article rel="discover" class="after">
+			Discovery
+		</article>
 
-			<article class="ease-it" rel="me" data-next="" data-prev="discovery">
-				Me
-			</article>
-		</div>
+		<article rel="me" class="after">
+			Me
+		</article>
 	</nav>
 
 	<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=PT+Sans:400,700"/>
 	<!-- <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css"/> -->
 	<script type="text/javascript" src="js/script.js"></script>
+	<script type="text/javascript" src="js/touch_scroll.js"></script>
 </body>
 </html>

@@ -1,27 +1,22 @@
 window.onload = onLoad;
 
 function onLoad() {
-	updateTabs();
+	openTab(); //same as openTab('home') because 'home' is the first child
 }
 
-function openTab(e) {
-	if(e.localName != 'li') return false;
-
-	var item 	= e;
-	var list 	= item.parentNode;
-	var index 	= Array.prototype.indexOf.call(list.children, item);
-
-	updateTabs(item);
+function onClickTabItem(item) {
+	if(item && item.getAttribute('rel')) openTab(item.getAttribute('rel'));
 }
 
-function updateTabs(item) {
-	if(!item) item = document.getElementById("tabmenu").children[0].children[0];
+function openTab(rel) {
+	var query 	= rel ? "#tabmenu [rel="+rel+"]" : "#tabmenu ul li:first-child";
+	var item 	= document.querySelector(query);
 	if(!item) return false;
 
 	var list 	= item.parentNode.children;
 	var count 	= item.parentNode.childElementCount;
 	var index 	= Array.prototype.indexOf.call(list, item);
-	var pages 	= document.getElementById("pages").children[0].children;
+	var pages 	= document.getElementById("pages").children;
 
 	//update css classes
 	for(var i = 0; i < count; i++) {
@@ -47,82 +42,3 @@ function updateTabs(item) {
 		}
 	}
 }
-
-var start,
-		last,
-		current,
-		diff,
-		prev,
-		next,
-		currObj,
-		prevObj,
-		nextObj,
-		docWidth = window.innerWidth;
-
-document.addEventListener("touchstart", function(evt)
-{
-	start = last = current = evt.touches[0].screenX;
-
-	next = document.querySelector('article.active').getAttribute('data-next');
-	prev = document.querySelector('article.active').getAttribute('data-prev');
-
-	currObj = document.querySelector('article.active');
-	nextObj = document.querySelector('article[rel="'+next+'"]');
-	prevObj = document.querySelector('article[rel="'+prev+'"]');
-
-	nextObj.classList.remove('ease-it');
-	currObj.classList.remove('ease-it');
-}, false);
-
-document.addEventListener("touchmove", function(evt)
-{
-	evt.preventDefault();
-
-	last = current;
-	current = evt.touches[0].screenX;
-
-	diff = current - start;
-
-	var aux = (docWidth+diff);
-
-	document.querySelector('article.active').style.left = diff+"px";
-	
-	if(prevObj != null)
-	{
-		if(diff < 0)
-		{
-			prevObj.style.left = "-"+diff+"px";
-		}
-		else
-		{
-			prevObj.style.left = diff+"px";
-		}
-	}
-	if(nextObj != null)
-	{
-		nextObj.style.left = aux+"px";
-	}
-
-}, false);
-
-document.addEventListener("touchend", function()
-{
-	if(prevObj != null)
-		prevObj.style.left = '';
-	if(nextObj != null)
-		nextObj.style.left = '';
-
-	document.querySelector('article.active').classList.add('ease-it');
-	document.querySelector('article.active').style.left = "0px";
-
-	if(diff < -200 && next != "")
-	{
-		document.querySelector('article.active').style.left = "";
-		updateTabs(document.querySelector('li[rel="'+next+'"]'));
-	}
-	else if(diff > 200 && prev != "")
-	{
-		document.querySelector('article.active').style.left = "";
-		updateTabs(document.querySelector('li[rel="'+prev+'"]'));
-	}
-}, false);
